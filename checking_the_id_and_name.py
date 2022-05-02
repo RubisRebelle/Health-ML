@@ -44,3 +44,59 @@ class check_id_and_name():
                 else:
                     print(f"That is a nice name {new_name}")
                     break
+
+    # a function for checking the id of the user
+    def the_id(self):
+        id_codes = ["eric_go_brr", "i_am_awesome", "dja7623d"]  # id list for testing 'duh'
+        while True:
+            try:
+                ask_id = str(input('Do you want to make your own ID or not, (Yes = make own id, No = let the bot make an ID )): ')).lower()
+            except ValueError:
+                print('I think the value you entered is incorrect')
+
+            if ask_id == 'Yes'.lower():
+                print('Ok now you may enter your id below')
+                while True:
+                    human_id = input('Please enter a 8 letter ID: ')
+                    if len(human_id) > 8:
+                        print('YOUR ID CODE SHOULD HAVE 8 CHARACTERS ONLY!!!!!')
+                    elif len(human_id) < 8:
+                        print('Your id code should at least have 8 characters')
+                    else:
+                        print('You are good to go')
+                        break
+
+                break
+
+            elif ask_id == 'No'.lower():
+                print("Okay we can help you make your code")
+
+                def bot_make_id():
+                    combined = ascii_letters
+                    secure_random = random.SystemRandom()
+
+                    passwords = "".join(secure_random.choice(combined) for i in range(8))
+                    print(passwords)
+
+                bot_make_id()
+
+                # this function is to review the bot id
+                def review_code():
+                    while True:
+                        bot_make_id()
+                        bot_code = input('Is this code good to go? : ').lower()
+                        if bot_code == 'yes':
+                            print('Ok, Thank you for the feedback')
+                            break
+
+                        elif bot_code == 'no':
+                            print('OK the bot will generate another code for you, Please wait')
+                            bot_make_id()
+                        else:
+                            print('Sorry, i cannot understand what you said')
+
+                review_code()
+                break
+
+            else:
+                print('Sorry, i cannot understand anything')

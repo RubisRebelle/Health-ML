@@ -52,3 +52,16 @@ class MeddieProgram():
         speak('Welcome to the Meddie App')
         return True
 
+    # Over here i am creating a function which is like a quick bio for the app
+    def create_a_bio(self):
+        bio_name = []
+        bio_list = []
+        speak('Before starting lets create a quick bio')
+        name = input('Enter your name for the bio: ')
+        print(bio_name.append(name))
+        ask_bio = input('HEY CAN YOU please tell me something about yourself: ')
+        print(bio_list.append(ask_bio))
+        print('Ok thank you appreciate it ')
+        print(list(zip(bio_name, bio_list)))
+        write_txt = open("eric_codes.txt","w+")
+        write_txt.write(name and ask_bio)
