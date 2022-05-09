@@ -100,3 +100,52 @@ class check_id_and_name():
 
             else:
                 print('Sorry, i cannot understand anything')
+
+# Here we execute the program
+project_program = check_id_and_name.askmember()
+print(project_program)
+
+# Over here i create another function which re checks the id and name (and those who give the input as no "in the begining")
+def ask_name_and_id():
+    def check_name():
+        name = input("What is your full name: ")
+        if name in names:
+            print('This name is already taken')
+
+        else:
+            print(f'Nice name {name}')
+
+
+    
+    #     Over here i  created a function which checks if th users id is valid or not
+    def check_id():
+        id = str(['hello123', 'ericcode', '1223lf54',]) # here also i created a list of name  for testing
+        # and also the user viewing or forking this code follow str = 'Eric Codes' on youtube
+        while True:
+            get_id = str(input('Your id: '))
+            if len(get_id) < 8:
+                print('')
+            elif len(get_id) > 8:
+                print('This id is already taken')
+            else:
+                print('This is a very nice id')
+                break
+
+    # you can also create an account in Twilio to send sms
+    # this is a function to send a notification
+    def send_notification():
+        notification.notify(
+
+            title='Meddie',
+            message='You have successfully finished setting up Meddie'
+
+        )
+        return 'nice'
+
+    check_name()
+
+    check_id()
+
+    send_notification()
+
+ask_name_and_id()
